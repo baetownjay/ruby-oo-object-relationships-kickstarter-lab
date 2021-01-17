@@ -1,6 +1,6 @@
 require 'pry'
 class Backer
-    attr_accessor :name, :list
+    attr_accessor :name, :personal_projects_list
 
     @@all = []
     @@projects = []
@@ -12,6 +12,7 @@ class Backer
     end
     def back_project(project)
         #binding.pry
+        @project = project
         @@projects << ProjectBacker.new(project, self)
         @personal_projects_list << project
         @@projects
@@ -24,5 +25,6 @@ class Backer
     end
     def backed_projects
         @personal_projects_list
+        #binding.pry
     end
 end
