@@ -11,11 +11,8 @@ class Backer
         @personal_projects_list = []
     end
     def back_project(project)
-        #binding.pry
-        @project = project
         @@projects << ProjectBacker.new(project, self)
         @personal_projects_list << project
-        @@projects
     end
     def self.projects
         @@projects
@@ -25,6 +22,5 @@ class Backer
     end
     def backed_projects
         @personal_projects_list
-        #binding.pry
     end
 end
